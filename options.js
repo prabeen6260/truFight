@@ -7,9 +7,9 @@ function options(){
     textAlign(CENTER,CENTER);
     fill(255);
     //stroke(255);
-    text("FIGHT",width/2,height/2);
-    text("RESTART",width/2,height/2 +100);
-    text("SETTINGS", width/2,height/2+200);
+    text("FIGHT",width/2,height/2-100);
+    text("RESTART",width/2,height/2);
+    text("SETTINGS", width/2,height/2+100);
     pop();
 
 }
