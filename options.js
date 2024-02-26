@@ -39,31 +39,30 @@ function maps(flag){
 }
 function map1(flag){
     if(flag){
-        image(bg1,0,0,windowWidth,windowHeight);
+        bg=bg1;
     }
     else return
 }
 function map2(flag){
     if(flag){
-        image(bg2,0,0,windowWidth,windowHeight);
+        bg=bg2;
     }
     else return
 }
 function map3(flag){
     if(flag){
-        image(bg3,0,0,windowWidth,windowHeight);
-    }
+    bg=bg3;    }
     else return
 }
 function map4(flag){
     if(flag){
-        image(bg4,0,0,windowWidth,windowHeight);
+        bg=bg4;
     }
     else return
 }
 function map5(flag){
     if(flag){
-        image(bg5,0,0,windowWidth,windowHeight);
+        bg=bg5;
     }
     else return
 }

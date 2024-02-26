@@ -1,6 +1,16 @@
 function mouseClicked() {
     // Check if the mouse is over the "CHANGE MAP" option
     if (
+        mouseX > width / 2 - textWidth("FIGHT")&&
+        mouseX < width / 2 + textWidth("FIGHT") &&
+        mouseY > height / 2 - 250 - 30 && // Adjust based on text size
+        mouseY < height / 2 - 250 + 40 && showOptions===true && flagForMaps===false
+    ) {
+        showOptions=!showOptions;
+        gameStart = true;
+    
+    }
+    if (
         mouseX > width / 2 - textWidth("CHANGE MAP")&&
         mouseX < width / 2 + textWidth("CHANGE MAP") &&
         mouseY > height / 2 - 100 - 30 && // Adjust based on text size
