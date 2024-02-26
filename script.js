@@ -51,6 +51,8 @@ let player2_damage =10;
 //---------------------------------------------------
 
 
+let easter_counter = 0;
+let winCount = 0;
 
 //for jujmping--------------
 let  vy;
@@ -122,6 +124,7 @@ function draw(){
         if (opp_is_computer){
 
             computer();
+            
         }
     let gy = height - ground;
     themeMusic.stop();
