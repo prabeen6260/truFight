@@ -6,11 +6,10 @@ let flagForMap2=false;
 let flagForMap3=false;
 let flagForMap4=false;
 let flagForMap5=false;
-let flagForAudioText=false;
-let flagForAudioBack=false;
 let flagForQuit=false;
 let gameStart = false;
 let bg;
+let audioContext;
 //menu-options----------------------------
 //let hovered="";
 //let isHovered=false;
@@ -22,7 +21,7 @@ const DEFAULT_PLAYER_HEIGHT = 200;
 const DEFAULT_PLAYER_WIDTH = 100;
 let player1_img_width = DEFAULT_PLAYER_WIDTH;
 let player1_img_height = DEFAULT_PLAYER_HEIGHT;
-let player1_y = 650;
+let player1_y; 
 let moveleft = false;
 let moveright = false;
 let player_speed = 10; 
@@ -38,11 +37,12 @@ const P2_PLAYER_HEIGHT = 400;
 const P2_PLAYER_WIDTH = 200;
 let player2_img_width = P2_PLAYER_WIDTH;
 let player2_img_height = P2_PLAYER_HEIGHT;
-let player2_y = 450;
+let player2_y; 
 let p2_moveleft = false;
 let p2_moveright =false;
 let player2_speed = 3; 
 let is_player2_injured = false;
+let player2_health=0;
 //---------------------------------------------------
 
 
@@ -68,10 +68,16 @@ function setup(){
     textFont(font1);
     textSize(50);
     vy = 0;
+    audioContext = getAudioContext();
+    player1_y= windowHeight/2+300;
+    player2_y=windowHeight/2-50;
+
 }
 let count = 0;
 function draw(){
+    
     if (!gameStart){
+        
 
         push();
         background(255);
@@ -85,6 +91,10 @@ function draw(){
        // options(showOptions);
         // for showing maps options
         image(bg,0,0,windowWidth,windowHeight);
+        showOptions=false;
+        gameOver();
+        
+        
         // for choosing map1
         map1(flagForMap1);
         // for choosing map2
@@ -96,16 +106,16 @@ function draw(){
         // for choosing map5
         map5(flagForMap5);
         // audio text
-        backAudio(flagForAudioBack);
-        audioText(flagForAudioText);
         maps(flagForMaps);  
     
         options(showOptions);
         quit(flagForQuit);
         mouseHovered();
+        audioPressed();
  
     }else {
     let gy = height - ground;
+    themeMusic.stop();
     player1_y += vy;
     if(player1_y < height - ground - size / 2){ // in the air
         vy += g;
@@ -176,3 +186,4 @@ function draw(){
     }
 
 }
+

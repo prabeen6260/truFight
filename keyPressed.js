@@ -75,9 +75,9 @@ function keyPressed(){
     
         }
         
-        if (key=="m"){
-            playMusic();
-        }
+        // if (key=="m"){
+        //     playMusic();
+        // }
     
         //player2-controls-------------------------------
         
@@ -131,13 +131,13 @@ function keyReleased(){
     //player1_x=temp_x;
 }
 
-function playMusic(){
+// function playMusic(){
     
-    //console.log("function active")
-    if (!themeMusic.isPlaying()){
-        console.log("reached")
-        themeMusic.loop();  
-    } else {
-        themeMusic.stop();
-    }
-}
+//     //console.log("function active")
+//     if (!themeMusic.isPlaying()){
+//         console.log("reached")
+//         themeMusic.loop();  
+//     } else {
+//         themeMusic.stop();
+//     }
+// }

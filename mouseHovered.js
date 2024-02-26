@@ -1,204 +1,134 @@
 function mouseHovered(){
-    if (
-        mouseX > width / 2 - textWidth('FIGHT') &&
-        mouseX < width / 2 + textWidth("FIGHT")  &&
-        mouseY > height / 2 - 250 - 40 && // Adjust based on text size
-        mouseY < height / 2 - 250 + 40
-    ) {
-        
-        if(showOptions){
-        push();
+    if(!gameStart){
+    push();
         textFont(font1);
         textSize(103);
         textAlign(CENTER,CENTER);
         fill(255,0,0);
-        text("FIGHT",width/2,height/2-250);
-        pop();
+    if (
+        mouseX > windowWidth / 2 - textWidth('FIGHT')/2 &&
+        mouseX < windowWidth / 2 + textWidth("FIGHT")/2 &&
+        mouseY > windowHeight / 2 - 250 - 40 && // Adjust based on text size
+        mouseY < windowHeight / 2 - 250 + 40 && flagForMaps===false
+    ) {
+        
+        if(showOptions){
+        text("FIGHT",windowWidth/2,windowHeight/2-250);
         }
 
     }
     
     if (
-        mouseX > width / 2 - textWidth('CHANGE MAP') &&
-        mouseX < width / 2 + textWidth("CHNAGE MAP")  &&
-        mouseY > height / 2 - 100 - 40 && // Adjust based on text size
-        mouseY < height / 2 - 100 + 40
+        mouseX > windowWidth / 2 - textWidth('CHANGE MAP')/2 &&
+        mouseX < windowWidth / 2 + textWidth("CHNAGE MAP") /2 &&
+        mouseY > windowHeight / 2 - 100 - 40 && // Adjust based on text size
+        mouseY < windowHeight / 2 - 100 + 40 && flagForMaps===false
     ) {
         
         if(showOptions){
-        push();
-        textFont(font1);
-        textSize(103);
-        textAlign(CENTER,CENTER);
-        fill(255,0,0);
-        text("CHANGE MAP",width/2,height/2-100);
-        pop();
+        text("CHANGE MAP",windowWidth/2,windowHeight/2-100);
+        
         }
 
     }
     else if (
-        mouseX > windowWidth / 2  -textWidth("SETTINGS")&&
-        mouseX < windowWidth / 2 + textWidth("SETTINGS") &&
+        mouseX > windowWidth / 2  -textWidth("AUDIO")/2&&
+        mouseX < windowWidth / 2 + textWidth("AUDIO")/2 &&
         mouseY > windowHeight / 2 +50 -30 && // Adjust based on text size
         mouseY < windowHeight / 2  + 50 + 40 && showOptions===true && flagForMaps===false
     ) {
         if(showOptions){
-            push();
-            textFont(font1);
-            textSize(103);
-            textAlign(CENTER,CENTER);
-            fill(255,0,0);
-            text("SETTINGS",width/2,height/2+50);
-            pop();
+            text("AUDIO",windowWidth/2,windowHeight/2+50);
+            
             }
     }
     else if (
-        mouseX > windowWidth / 2  -textWidth("QUIT")&&
-        mouseX < windowWidth / 2 + textWidth("QUIT") &&
+        mouseX > windowWidth / 2  -textWidth("QUIT")/2&&
+        mouseX < windowWidth / 2 + textWidth("QUIT") /2&&
         mouseY > windowHeight / 2  +200 - 30 && // Adjust based on text size
-        mouseY < windowHeight / 2  + 200 + 30 
+        mouseY < windowHeight / 2  + 200 + 30 && flagForMaps===false
     ) {
         if(showOptions){
-            push();
-            textFont(font1);
-            textSize(103);
-            textAlign(CENTER,CENTER);
-            fill(255,0,0);
-            text("QUIT",width/2,height/2+200);
-            pop();
+            text("QUIT",windowWidth/2,windowHeight/2+200);
+            
             }
     }
+    pop();
+    push();
+    textFont(font1);
+    textSize(52);
+    textAlign(CENTER,CENTER);
+    fill(255,0,0);
 
-    else if (
-        mouseX > windowWidth / 2 -600- textWidth("DESERTBLITZ")&&
-        mouseX < windowWidth / 2-600 + textWidth("DESERTBLITZ") &&
+     if (
+        mouseX > windowWidth / 2 -600- textWidth("DESERTBLITZ")/2&&
+        mouseX < windowWidth / 2-600 + textWidth("DESERTBLITZ")/2 &&
         mouseY > windowHeight / 2  - 20 && // Adjust based on text size
         mouseY < windowHeight / 2   + 20
     ) {
-        if(!showOptions && !flagForAudioText){
-            push();
-            textFont(font1);
-            textSize(52);
-            textAlign(CENTER,CENTER);
-            fill(255,0,0);
-            text("DESERT BLITZ",width/2-600,height/2);
-            pop();
+        if(!showOptions){
+            text("DESERT BLITZ",windowWidth/2-600,windowHeight/2);
+            
             }
     }
     else if (
-        mouseX > windowWidth / 2 -300- textWidth("UMBRACITY")&&
-        mouseX < windowWidth / 2-300 + textWidth("UMBRACITY") &&
+        mouseX > windowWidth / 2 -300- textWidth("UMBRACITY")/2&&
+        mouseX < windowWidth / 2-300 + textWidth("UMBRACITY") /2&&
         mouseY > windowHeight / 2  - 20 && // Adjust based on text size
         mouseY < windowHeight / 2   + 20 
     ) { 
-        if(!showOptions &&  !flagForAudioText){
-            push();
-            textFont(font1);
-            textSize(52);
-            textAlign(CENTER,CENTER);
-            fill(255,0,0);
-            text("UMBRA CITY",width/2-300,height/2);
-            pop();
+        if(!showOptions){
+            text("UMBRA CITY",windowWidth/2-300,windowHeight/2);
+            
             }
     }
     else if (
-        mouseX > windowWidth / 2 - textWidth("EMBERFALLS")&&
-        mouseX < windowWidth / 2 + textWidth("EMBERFALLS") &&
+        mouseX > windowWidth / 2 - textWidth("EMBERFALLS")/2&&
+        mouseX < windowWidth / 2 + textWidth("EMBERFALLS")/2 &&
         mouseY > windowHeight / 2 - 20 && // Adjust based on text size
         mouseY < windowHeight / 2  + 20) {
-            if(!showOptions && !flagForAudioText){
-                push();
-                textFont(font1);
-                textSize(52);
-                textAlign(CENTER,CENTER);
-                fill(255,0,0);
-                text("EMBER FALLS",width/2,height/2);
-                pop();
+            if(!showOptions){
+                text("EMBER FALLS",windowWidth/2,windowHeight/2);
+                
                 }
     }
     else if (
-        mouseX > windowWidth / 2 +300- textWidth("BREEZEHAVEN")&&
-        mouseX < windowWidth / 2+300 + textWidth("BREEZEHAVEN") &&
+        mouseX > windowWidth / 2 +300- textWidth("BREEZEHAVEN")/2&&
+        mouseX < windowWidth / 2+300 + textWidth("BREEZEHAVEN")/2 &&
         mouseY > windowHeight / 2  - 20 && // Adjust based on text size
         mouseY < windowHeight / 2  + 20
     ) {
-        if(!showOptions && !flagForAudioText){
-            push();
-            textFont(font1);
-            textSize(52);
-            textAlign(CENTER,CENTER);
-            fill(255,0,0);
-            text("BREEZE HAVEN",width/2+300,height/2);
-            pop();
+        if(!showOptions ){
+            text("BREEZE HAVEN",windowWidth/2+300,windowHeight/2);
+            
             }
     }
     else if (
-        mouseX > windowWidth / 2 +600 -textWidth("WETBOULEVARD")&&
-        mouseX < windowWidth / 2+600 + textWidth("WETBOULEVARD") &&
+        mouseX > windowWidth / 2 +600 -textWidth("BLAZE LODGE")/2&&
+        mouseX < windowWidth / 2+600 + textWidth("BLAZE LODGE")/2 &&
         mouseY > windowHeight / 2 - 20 && // Adjust based on text size
-        mouseY < windowHeight / 2  + 20 && !flagForAudioText
+        mouseY < windowHeight / 2  + 20
     ) {
         if(!showOptions ){
-            push();
-            textFont(font1);
-            textSize(52);
-            textAlign(CENTER,CENTER);
-            fill(255,0,0);
-            text("WET BOULEVARD",width/2+600,height/2);
-            pop();
+            
+            text("BLAZE LODGE",windowWidth/2+600,windowHeight/2);
+            
             }
     }
     
     else if (
-        mouseX > windowWidth / 2  -textWidth("BACK")&&
-        mouseX < windowWidth / 2 + textWidth("BACK") &&
+        mouseX > windowWidth / 2  -textWidth("BACK")/2&&
+        mouseX < windowWidth / 2 + textWidth("BACK")/2 &&
         mouseY > windowHeight / 2 +100 -20 && // Adjust based on text size
         mouseY < windowHeight / 2  + 100+20  && flagForMaps===true && showOptions ===false
     ) {
         if(!showOptions){
-            push();
-            textFont(font1);
-            textSize(52);
-            textAlign(CENTER,CENTER);
-            fill(255,0,0);
-            text("BACK",width/2,height/2+100);
-            pop();
+            
+            text("BACK",windowWidth/2,windowHeight/2+100);
             }
     }
-    // for back option in audio
-    else if (
-        mouseX > windowWidth / 2  -textWidth("BACK")&&
-        mouseX < windowWidth / 2 + textWidth("BACK") &&
-        mouseY > windowHeight / 2 +100 -30 && // Adjust based on text size
-        mouseY < windowHeight / 2  + 100+30 && showOptions===false && flagForMaps===false && flagForAudioText==true
-    ) {
-        if(!showOptions){
-            push();
-            textFont(font1);
-            textSize(62);
-            textAlign(CENTER,CENTER);
-            fill(255,0,0);
-            text("BACK",width/2,height/2+100);
-            pop();
-            }
-    }
-    // BACK OPTION IN AUDIO
-    else if (
-        mouseX > windowWidth / 2  -textWidth("AUDIO")&&
-        mouseX < windowWidth / 2 + textWidth("AUDIO") &&
-        mouseY > windowHeight / 2  -30 && // Adjust based on text size
-        mouseY < windowHeight / 2  + 30 && showOptions===false && flagForMaps===false && flagForAudioText==true
-    ) {
-        if(!showOptions){
-            push();
-            textFont(font1);
-            textSize(62);
-            textAlign(CENTER,CENTER);
-            fill(255,0,0);
-            text("AUDIO",width/2,height/2);
-            pop();
-            }
-    }
+    pop();
     // quit function
+}
     
 }
