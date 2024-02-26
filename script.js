@@ -29,6 +29,8 @@ let player_speed = 10;
 let is_main_attack = false;
 let player1_blast_x = 0;
 let player1_blast_y = 0;
+let is_player1_injured = false;
+
 //--------------------------------------------------
 
 //player-2-----------------------------------
@@ -67,6 +69,7 @@ function setup(){
     createCanvas(windowWidth,windowHeight);
     textFont(font1);
     textSize(50);
+    player1_y =windowHeight-200;
     vy = 0;
 }
 let count = 0;
@@ -104,75 +107,75 @@ function draw(){
         quit(flagForQuit);
         mouseHovered();
  
-    }else {
-    let gy = height - ground;
-    player1_y += vy;
-    if(player1_y < height - ground - size / 2){ // in the air
-        vy += g;
-    }else{
-        vy = 0;
-        player1_y = height - ground - size / 2;
-    }
-    push();
-    background(0);
-    //bg1.size(windowWidth,windowHeight);
-    //bg1.position(0,0);
-    //background1.position(0,0);
-    //options();
-
-    image(bg,0,0,windowWidth,windowHeight);
-   //fill(0,0,0,191);
-   // noStroke();
-   // ellipse(player1_x+40,player1_y+190, 80,30)
-   if (player1_x<player2_x){
-    scale(-1,1);
-    image(player2_img, -player2_x-170,player2_y, player2_img_width, player2_img_height);
-    image(player_img, -player1_x-170,player1_y, player1_img_width, player1_img_height);
-    are_players_inverted=true;
     } else {
-        are_players_inverted=false;
-        image(player2_img, player2_x,player2_y, player2_img_width, player2_img_height);
-        image(player_img, player1_x,player1_y, player1_img_width, player1_img_height);
-    }
-
-    
-    if (is_main_attack){
-        console.log(player1_blast_x);
-        scale(-1,1);
-        player1_blast_x=player1_blast_x+10;
-        blast();
-
-        if(Math.abs(Math.abs(player1_blast_x)-(player2_x+50))<=200){
-            is_player2_injured=true;
-            player2_img=player2_injured;
-            
-            
-        } else {
-            is_player2_injured=false;
-            player2_img = player2_idle;
+        let gy = height - ground;
+        player1_y += vy;
+        if(player1_y < height - ground - size / 2){ // in the air
+            vy += g;
+        }else{
+            vy = 0;
+            player1_y = height - ground - size / 2;
         }
-    }
-    if (player1_blast_x>0){
-        is_main_attack=false;
-    }
-    
-    
+        push();
+        background(0);
+        //bg1.size(windowWidth,windowHeight);
+        //bg1.position(0,0);
+        //background1.position(0,0);
+        //options();
 
-    pop();
-    
-    if (moveleft){
-        player1_x = player1_x - player_speed;
-    } 
-    if (moveright){
-        player1_x = player1_x + player_speed;
-    }
+        image(bg,0,0,windowWidth,windowHeight);
+    //fill(0,0,0,191);
+    // noStroke();
+    // ellipse(player1_x+40,player1_y+190, 80,30)
+        if (player1_x<player2_x){
+            scale(-1,1);
+            image(player2_img, -player2_x-170,player2_y, player2_img_width, player2_img_height);
+            image(player_img, -player1_x-170,player1_y, player1_img_width, player1_img_height);
+            are_players_inverted=true;
+        } else {
+            are_players_inverted=false;
+            image(player2_img, player2_x,player2_y, player2_img_width, player2_img_height);
+            image(player_img, player1_x,player1_y, player1_img_width, player1_img_height);
+        }
 
-    if (p2_moveleft){
-        player2_x = player2_x - player2_speed;
-    } 
-    if (p2_moveright){
-        player2_x = player2_x + player2_speed;
-    }
+        
+        if (is_main_attack){
+            console.log(player1_blast_x);
+            scale(-1,1);
+            player1_blast_x=player1_blast_x+10;
+            blast();
+
+            if(Math.abs(Math.abs(player1_blast_x)-(player2_x+50))<=200){
+                is_player2_injured=true;
+                player2_img=player2_injured;
+                
+                
+            } else {
+                is_player2_injured=false;
+                player2_img = player2_idle;
+            }
+        }
+        if (player1_blast_x>0){
+            is_main_attack=false;
+        }
+        
+        
+
+        pop();
+        
+        if (moveleft){
+            player1_x = player1_x - player_speed;
+        } 
+        if (moveright){
+            player1_x = player1_x + player_speed;
+        }
+
+        if (p2_moveleft){
+            player2_x = player2_x - player2_speed;
+        } 
+        if (p2_moveright){
+            player2_x = player2_x + player2_speed;
+        }
     }
 
 }
