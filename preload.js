@@ -7,7 +7,7 @@ bg2=loadImage("./assets/backgrounds/bg2.gif");
 bg3=loadImage("./assets/backgrounds/bg3.gif");
 bg4=loadImage("./assets/backgrounds/bg4.gif");
 bg5=loadImage("./assets/backgrounds/bg5.gif");
-font1=loadFont("./assets/fonts/font1.otf")
+font1=loadFont("./assets/fonts/font2.ttf");
 
 }
 

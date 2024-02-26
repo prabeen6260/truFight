@@ -3,18 +3,18 @@ function mouseClicked() {
     if (
         mouseX > width / 2 - textWidth("CHANGE MAP")&&
         mouseX < width / 2 + textWidth("CHANGE MAP") &&
-        mouseY > height / 2 - 100 - 20 && // Adjust based on text size
-        mouseY < height / 2 - 100 + 20 && showOptions===true && flagForMaps===false
+        mouseY > height / 2 - 100 - 30 && // Adjust based on text size
+        mouseY < height / 2 - 100 + 40 && showOptions===true && flagForMaps===false
     ) {
         showOptions=!showOptions;
         flagForMaps=!flagForMaps;
     }
     // for maps selection
     if (
-        mouseX > width / 2 -400- textWidth("MAP1")&&
-        mouseX < width / 2-400 + textWidth("map1") &&
-        mouseY > height / 2  - 20 && // Adjust based on text size
-        mouseY < height / 2   + 20 && showOptions===false
+        mouseX > windowWidth / 2 -600- textWidth("DESERTBLITZ")&&
+        mouseX < windowWidth / 2-600 + textWidth("DESERTBLITZ") &&
+        mouseY > windowHeight / 2  - 20 && // Adjust based on text size
+        mouseY < windowHeight / 2   + 20 && showOptions===false
     ) {
         showOptions=false;
         flagForMap1=!flagForMap1;
@@ -25,10 +25,10 @@ function mouseClicked() {
          flagForMap5=false;
     }
     if (
-        mouseX > width / 2 -200- textWidth("MAP1")&&
-        mouseX < width / 2-200 + textWidth("map1") &&
-        mouseY > height / 2  - 20 && // Adjust based on text size
-        mouseY < height / 2   + 20 && showOptions===false
+        mouseX > windowWidth / 2 -300- textWidth("UMBRACITY")&&
+        mouseX < windowWidth / 2-300 + textWidth("UMBRACITY") &&
+        mouseY > windowHeight / 2  - 20 && // Adjust based on text size
+        mouseY < windowHeight / 2   + 20 && showOptions===false
     ) {
         showOptions=false;
         flagForMap2=!flagForMap2;
@@ -39,10 +39,10 @@ function mouseClicked() {
          flagForMap5=false;
     }
     if (
-        mouseX > width / 2 - textWidth("MAP1")&&
-        mouseX < width / 2 + textWidth("map1") &&
-        mouseY > height / 2 - 20 && // Adjust based on text size
-        mouseY < height / 2  + 20  && showOptions===false
+        mouseX > windowWidth / 2 - textWidth("EMBERFALLS")&&
+        mouseX < windowWidth / 2 + textWidth("EMBERFALLS") &&
+        mouseY > windowHeight / 2 - 20 && // Adjust based on text size
+        mouseY < windowHeight / 2  + 20  && showOptions===false
     ) {
         showOptions=false;
         flagForMap3=!flagForMap3;
@@ -53,10 +53,10 @@ function mouseClicked() {
         flagForMaps=true;
     }
     if (
-        mouseX > width / 2 +200- textWidth("MAP1")&&
-        mouseX < width / 2+200 + textWidth("map1") &&
-        mouseY > height / 2  - 20 && // Adjust based on text size
-        mouseY < height / 2  + 20 && showOptions===false
+        mouseX > windowWidth / 2 +300- textWidth("BREEZEHAVEN")&&
+        mouseX < windowWidth / 2+300 + textWidth("BREEZEHAVEN") &&
+        mouseY > windowHeight / 2  - 20 && // Adjust based on text size
+        mouseY < windowHeight / 2  + 20 && showOptions===false
     ) {
         showOptions=false;
         flagForMap4=!flagForMap4;
@@ -67,10 +67,10 @@ function mouseClicked() {
          flagForMap5=false;
     }
     if (
-        mouseX > width / 2 +400 -textWidth("MAP1")&&
-        mouseX < width / 2+400 + textWidth("map1") &&
-        mouseY > height / 2 - 20 && // Adjust based on text size
-        mouseY < height / 2  + 20 && showOptions===false
+        mouseX > windowWidth / 2 +600 -textWidth("WETBOULEVARD")&&
+        mouseX < windowWidth / 2+600 + textWidth("WETBOULEVARD") &&
+        mouseY > windowHeight / 2 - 20 && // Adjust based on text size
+        mouseY < windowHeight / 2  + 20 && showOptions===false
     ) {
         showOptions=false;
         flagForMap5=!flagForMap5;
@@ -80,13 +80,71 @@ function mouseClicked() {
          flagForMap4=false;
          flagForMap1=false;
     }
+    push()
+    textSize(100)
     if (
-        mouseX > width / 2  -textWidth("BACK")&&
-        mouseX < width / 2 + textWidth("BACK") &&
-        mouseY > height / 2 +100 -20 && // Adjust based on text size
-        mouseY < height / 2  + 100+20  && flagForMaps===true && showOptions ===false
+        mouseX > windowWidth / 2  -textWidth("BACK")&&
+        mouseX < windowWidth / 2 + textWidth("BACK") &&
+        mouseY > windowHeight / 2 +100 -20 && // Adjust based on text size
+        mouseY < windowHeight / 2  + 100+20  && flagForMaps===true && showOptions ===false
     ) {
         flagForMaps=false;
         showOptions=true;
     }
+    if (
+        mouseX > windowWidth / 2  -textWidth("SETTINGS")&&
+        mouseX < windowWidth / 2 + textWidth("SETTINGS") &&
+        mouseY > windowHeight / 2 +50 -30 && // Adjust based on text size
+        mouseY < windowHeight / 2  + 50 + 40 && showOptions===true && flagForMaps===false
+    ) {
+        console.log('settings');
+        flagForMaps=false;
+        showOptions=false;
+        flagForAudioText=true;
+        flagForAudioBack=true;
+    }
+    pop();
+    // for back option in audio
+    if (
+        mouseX > windowWidth / 2  -textWidth("BACK")&&
+        mouseX < windowWidth / 2 + textWidth("BACK") &&
+        mouseY > windowHeight / 2 +100 -30 && // Adjust based on text size
+        mouseY < windowHeight / 2  + 100+30 && showOptions===false && flagForMaps===false && flagForAudioText==true
+    ) {
+        flagForMaps=false;
+        //flagForAudioText=true;
+        showOptions=true;
+        flagForAudiotext=false;
+        flagForAudioBack=false;
+        flagForMaps=false;
+        flagForMap3=false;
+       // flagForAudioText=!flagForAudioText;
+    }
+    // BACK OPTION IN AUDIO
+    if (
+        mouseX > windowWidth / 2  -textWidth("AUDIO")&&
+        mouseX < windowWidth / 2 + textWidth("AUDIO") &&
+        mouseY > windowHeight / 2  -30 && // Adjust based on text size
+        mouseY < windowHeight / 2  + 30 && showOptions===false && flagForMaps===false && flagForAudioText==true
+    ) {
+        flagForMaps=false;
+        //flagForAudioText=true;
+        showOptions=false;
+        flagForAudiotext=true;
+        flagForAudioBack=true;
+        flagForMap3=false;
+        flagForMaps=false;
+    }
+    // quit function
+    if (
+        mouseX > windowWidth / 2  -textWidth("QUIT")&&
+        mouseX < windowWidth / 2 + textWidth("QUIT") &&
+        mouseY > windowHeight / 2  +200 - 30 && // Adjust based on text size
+        mouseY < windowHeight / 2  + 200 + 30 
+    ) {
+        flagForQuit=true;
+    }
+
+    
+    
 }
