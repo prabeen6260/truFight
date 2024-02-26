@@ -1,8 +1,14 @@
 function keyPressed(){
+    if (key=="m"){
+        playMusic();
+    }
+
     if(keyCode===27 && flagForMaps===false){
         showOptions=!showOptions;
         if (gameStart){
             gameStart=false;
+        } else {
+            gameStart=true;
         }
     }
 
@@ -41,7 +47,7 @@ function keyPressed(){
                 vy = -jump;     
               }  
         } 
-         else if (key=="p"){
+         else if (key=="e"){
             player_img =player_punch;
             player1_img_width = 200;
             player1_img_height = 200;
@@ -75,9 +81,7 @@ function keyPressed(){
     
         }
         
-        // if (key=="m"){
-        //     playMusic();
-        // }
+       
     
         //player2-controls-------------------------------
         
@@ -89,6 +93,21 @@ function keyPressed(){
         } else if (key=="ArrowRight"){
             p2_moveright = true;
             player2_img =player2_walk_right;
+            
+        } else if (key=="p"){
+            if (!is_player2_injured){
+                player2_img =player2_punch;
+                player2_img_height = 400;
+                player2_img_width =400;
+    
+                if (Math.abs(player1_x-player2_x)<=300 && Math.abs(player1_y-(player2_y-200))<=400){
+                   // console.log("reached here");
+                    player_img = player_injured;
+                    player1_img_width = 200;
+                    is_player1_injured = true;
+                }
+            }
+           
             
         }
     
@@ -104,7 +123,7 @@ function blast(){
 
 function keyReleased(){
 
-    if (key=="a" || key =="d" || key=="p" || key=="w" || key=="q"){
+    if (key=="a" || key =="d" || key=="e" || key=="w" || key=="q"){
         player_img = player_idle_left;
         moveleft = false;
         moveright = false;
@@ -117,27 +136,34 @@ function keyReleased(){
     } 
     //playMusic();
 
-    if (key=="ArrowLeft"){
+    if (key=="ArrowLeft" || key=="ArrowRight" || key=="p" ){
         
         p2_moveleft = false;
-        player2_img = player2_idle;
-        
-        //console.log(player1_x);
-    } else if (key=="ArrowRight"){
         p2_moveright = false;
         player2_img = player2_idle;
-        
+        player2_img_width = P2_PLAYER_WIDTH;
+        player2_img_height = P2_PLAYER_HEIGHT;
+
+        if (is_player1_injured){
+            player_img= player_idle_left;
+            player1_img_height = DEFAULT_PLAYER_HEIGHT;
+            player1_img_width = DEFAULT_PLAYER_WIDTH;
+            is_player1_injured= false;
+        }
+        //console.log(player1_x);
     }
+
+    
     //player1_x=temp_x;
 }
 
-// function playMusic(){
+function playMusic(){
     
-//     //console.log("function active")
-//     if (!themeMusic.isPlaying()){
-//         console.log("reached")
-//         themeMusic.loop();  
-//     } else {
-//         themeMusic.stop();
-//     }
-// }
+    //console.log("function active")
+    if (!themeMusic.isPlaying()){
+        console.log("reached")
+        themeMusic.loop();  
+    } else {
+        themeMusic.stop();
+    }
+}
