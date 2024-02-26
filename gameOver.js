@@ -28,7 +28,9 @@ function gameOver(){
         showOptions = false;
         gameStart = false;
         text("YOU WIN",windowWidth/2,windowHeight/2);
+        
         if(mouseIsPressed){
+            winCount =winCount+1;
             showOptions=true;
             player1_health = 100;
             player2_health = 100;

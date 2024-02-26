@@ -29,7 +29,10 @@ function maps(flag){
     text("UMBRA CITY",windowWidth/2-300,windowHeight/2);
     text("EMBER FALLS",windowWidth/2,windowHeight/2);
     text("BREEZE HAVEN",windowWidth/2+300,windowHeight/2);
-    text("BLAZE LODGE",windowWidth/2+600,windowHeight/2);
+    if (winCount>=3){ //for easter egg
+             text("BLAZE LODGE",windowWidth/2+600,windowHeight/2);
+
+    }
     text("BACK",windowWidth/2,windowHeight/2+100);
     }
     else return
@@ -90,6 +93,7 @@ function audioPressed(){
 
     }
 }
+let music_map = "map1";
 function mapMusic(flag){
     if (flag==="map1"){
         stopMusic(flag);
@@ -110,6 +114,7 @@ function mapMusic(flag){
         stopMusic(flag);
         fire.loop();
     }
+    music_map = flag;
 }
 function stopMusic(flag){
     if(flag==="map1"){
@@ -136,7 +141,7 @@ function stopMusic(flag){
         autumn.stop();
         thunder.stop();
      }
-     else if(flag==="map1"){
+     else if(flag==="map5"){
         thunder.stop();
         city.stop();
         autumn.stop();

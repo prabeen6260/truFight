@@ -3,6 +3,11 @@ function keyPressed(){
         playMusic();
     }
 
+    if (key=="c"){
+        opp_is_computer = !opp_is_computer;
+    }
+
+
     if(keyCode===27 && flagForMaps===false){
         showOptions=!showOptions;
         if (gameStart){

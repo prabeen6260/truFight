@@ -64,7 +64,7 @@ function mouseHovered(){
         mouseX > windowWidth / 2 -600- textWidth("DESERTBLITZ")/2&&
         mouseX < windowWidth / 2-600 + textWidth("DESERTBLITZ")/2 &&
         mouseY > windowHeight / 2  - 20 && // Adjust based on text size
-        mouseY < windowHeight / 2   + 20
+        mouseY < windowHeight / 2   + 20 && flagForMaps===true && showOptions ===false
     ) {
         if(!showOptions){
             text("DESERT BLITZ",windowWidth/2-600,windowHeight/2);
@@ -75,7 +75,7 @@ function mouseHovered(){
         mouseX > windowWidth / 2 -300- textWidth("UMBRACITY")/2&&
         mouseX < windowWidth / 2-300 + textWidth("UMBRACITY") /2&&
         mouseY > windowHeight / 2  - 20 && // Adjust based on text size
-        mouseY < windowHeight / 2   + 20 
+        mouseY < windowHeight / 2   + 20 && flagForMaps===true && showOptions ===false
     ) { 
         if(!showOptions){
             text("UMBRA CITY",windowWidth/2-300,windowHeight/2);
@@ -85,7 +85,7 @@ function mouseHovered(){
     else if (
         mouseX > windowWidth / 2 - textWidth("EMBERFALLS")/2&&
         mouseX < windowWidth / 2 + textWidth("EMBERFALLS")/2 &&
-        mouseY > windowHeight / 2 - 20 && // Adjust based on text size
+        mouseY > windowHeight / 2 - 20 && flagForMaps===true && showOptions ===false && // Adjust based on text size
         mouseY < windowHeight / 2  + 20) {
             if(!showOptions){
                 text("EMBER FALLS",windowWidth/2,windowHeight/2);
@@ -96,7 +96,7 @@ function mouseHovered(){
         mouseX > windowWidth / 2 +300- textWidth("BREEZEHAVEN")/2&&
         mouseX < windowWidth / 2+300 + textWidth("BREEZEHAVEN")/2 &&
         mouseY > windowHeight / 2  - 20 && // Adjust based on text size
-        mouseY < windowHeight / 2  + 20
+        mouseY < windowHeight / 2  + 20 && flagForMaps===true && showOptions ===false
     ) {
         if(!showOptions ){
             text("BREEZE HAVEN",windowWidth/2+300,windowHeight/2);
@@ -107,9 +107,9 @@ function mouseHovered(){
         mouseX > windowWidth / 2 +600 -textWidth("BLAZE LODGE")/2&&
         mouseX < windowWidth / 2+600 + textWidth("BLAZE LODGE")/2 &&
         mouseY > windowHeight / 2 - 20 && // Adjust based on text size
-        mouseY < windowHeight / 2  + 20
+        mouseY < windowHeight / 2  + 20 && flagForMaps===true && showOptions ===false
     ) {
-        if(!showOptions ){
+        if(!showOptions && winCount>=3 ){
             
             text("BLAZE LODGE",windowWidth/2+600,windowHeight/2);
             

@@ -114,7 +114,7 @@ function mouseClicked() {
         mouseX > windowWidth / 2 +600 -textWidth("BLAZE LODGE")/2&&
         mouseX < windowWidth / 2+600 + textWidth("BLAZE LODGE")/2 &&
         mouseY > windowHeight / 2 - 20 && // Adjust based on text size
-        mouseY < windowHeight / 2  + 20 && showOptions===false
+        mouseY < windowHeight / 2  + 20 && showOptions===false && winCount>=3
     ) {
         showOptions=false;
         flagForMap5=!flagForMap5;

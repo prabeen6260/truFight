@@ -30,7 +30,7 @@ let player1_blast_x = 0;
 let player1_blast_y = 0;
 let is_player1_injured = false;
 let player1_health = 100;
-let player1_damage =0.5;
+let player1_damage =0.8;
 
 //--------------------------------------------------
 
@@ -47,7 +47,7 @@ let p2_moveright =false;
 let player2_speed = 3; 
 let is_player2_injured = false;
 let player2_health = 100;
-let player2_damage =10;
+let player2_damage =0.8;
 //---------------------------------------------------
 
 
@@ -84,10 +84,27 @@ function setup(){
 }
 let count = 0;
 function draw(){
-    
+    if (player1_x>(windowWidth-100)){
+        player1_x=windowWidth-100;
+    }
+    if (player2_x>(windowWidth-100)){
+        player2_x=windowWidth-100;
+    }
+
+    if (player1_x<0){
+        player1_x=0;
+    }
+    if (player2_x<0){
+        player2_x=0;
+    }
+
     if (!gameStart){
         
-
+        // if (is_player1_injured || is_player2_injured){
+        //     if (!punch2.isPlaying()){
+        //         punch2.play();
+        //     }
+        // }
         push();
         background(255);
        // bg1.size(windowWidth,windowHeight);
@@ -121,6 +138,7 @@ function draw(){
        
  
     }else {
+        mapMusic(music_map);
         if (opp_is_computer){
 
             computer();
@@ -176,7 +194,7 @@ function draw(){
         player1_blast_x=player1_blast_x+10;
         blast();
 
-        if(Math.abs(Math.abs(player1_blast_x)-(player2_x+50))<=200){
+        if(Math.abs(Math.abs(player1_blast_x)-(player2_x+50))<=100){
             is_player2_injured=true;
             player2_img=player2_injured;
             
