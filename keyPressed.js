@@ -62,7 +62,7 @@ function keyPressed(){
             console.log("player1x",player1_x);
             console.log("player2x",player2_x);
     
-            if (Math.abs(player1_x-player2_x)<=150 && Math.abs(player1_y-(player2_y-200))<=400){
+            if (Math.abs(player1_x-player2_x)<=150 && Math.abs(player1_y-(player2_y))<=400){
                 player2_img = player2_injured;
                 is_player2_injured = true;
             }
@@ -100,7 +100,7 @@ function keyPressed(){
                 player2_img_height = 400;
                 player2_img_width =400;
     
-                if (Math.abs(player1_x-player2_x)<=300 && Math.abs(player1_y-(player2_y-200))<=400){
+                if (Math.abs(player1_x-player2_x)<=330 && Math.abs(player1_y-(player2_y))<=350){
                    // console.log("reached here");
                     player_img = player_injured;
                     player1_img_width = 200;

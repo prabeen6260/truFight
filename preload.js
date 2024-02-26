@@ -1,6 +1,6 @@
 let bg1,bg2,bg3,bg4,bg5;
 let font1;
-let player2_idle, player2_walk_left, player2_walk_right, player2_injured, player2_lose;;
+let player2_idle, player2_walk_left, player2_walk_right, player2_injured, player2_lose, player2_punch;
 let pc1,pc2,pc3,pc4,pc5, player_idle_left, player_walk_left, player_walk_right, player_punch, player_injured, player_jump, player1_main_attack, player1_blast,player1_lose;
 let themeMusic;
 let fight,punch1,tring,bullet,thunder,wind,fire,autumn,city;
@@ -25,6 +25,7 @@ player_jump =  loadImage("./sprites/player1/jump/jump.gif");
 player2_idle = loadImage("./sprites/player2/idle/right/idle2.gif");
 player2_walk_left = loadImage("./sprites/player2/walk/p2_walk_left.gif");
 player2_walk_right =loadImage("./sprites/player2/walk/p2_walk_right.gif");
+player2_punch = loadImage("./sprites/player2/fight/p2_punchhi.gif");
 player2_injured = loadImage("./sprites/player2/fight/p2_injured.gif");
 player2_img = player2_idle;
 player1_main_attack = loadImage("./sprites/player1/fight/main_attack.gif");

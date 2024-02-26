@@ -64,6 +64,9 @@ let is_player_injured = false;
 let injure_counter = 0;
 let opp_is_computer = false;
 let are_players_inverted = false;
+
+let time1;
+
 //-----------------------------------------------
 
 function setup(){
@@ -73,7 +76,8 @@ function setup(){
     vy = 0;
     audioContext = getAudioContext();
     player1_y= windowHeight/2+300;
-    player2_y=windowHeight/2-50;
+    player2_y=windowHeight/2-40;
+    //time1 = millis();
 
 }
 let count = 0;
@@ -152,7 +156,9 @@ function draw(){
    if (player1_x<player2_x){
     scale(-1,1);
     image(player2_img, -player2_x-170,player2_y, player2_img_width, player2_img_height);
+
     image(player_img, -player1_x-170,player1_y, player1_img_width, player1_img_height);
+
     are_players_inverted=true;
     } else {
         are_players_inverted=false;
@@ -199,6 +205,6 @@ function draw(){
         player2_x = player2_x + player2_speed;
     }
     }
-
+    gameOver();
 }
 
