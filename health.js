@@ -13,36 +13,45 @@ function health(p1_health = 100, p2_health = 100){
     textAlign(TOP,LEFT);
     if (p1_health>70){
         fill(0,255,0);
-        rect(50, 100, 500*(p1_health/100),30);
+        rect(50, 90, 500*(p1_health/100),20);
     } else if (p1_health>40){
         fill(255,255,153);
-        rect(50, 100, 500*(p1_health/100),30);
+        rect(50, 90, 500*(p1_health/100),20);
     } else {
         fill(255,0,0);
-        rect(50, 100, 500*(p1_health/100),30);
+        rect(50, 90, 500*(p1_health/100),20);
     }
     
     
     fill(255,255,255);
-    text("Your Health:",50,70);
-
+    stroke(0,255,0);
+    strokeWeight(1.5);
+    text("Your Health:",50,60);
+    pop();
+    push();
 
     
     
     if (p2_health>70){
         fill(0,255,0);
-        rect(windowWidth-550, 100, 500*(p2_health/100),30);
+        rect(windowWidth-550, 90, 500*(p2_health/100),20);
     } else if (p2_health>40){
         fill(255,255,153);
-        rect(windowWidth-550, 100, 500*(p2_health/100),30);
+        rect(windowWidth-550, 90, 500*(p2_health/100),20);
     } else {
         fill(255,0,0);
-        rect(windowWidth-550, 100, 500*(p2_health/100),30);
+        rect(windowWidth-550, 90, 500*(p2_health/100),20);
     }
     
     
     fill(255,255,255);
-    text("Opponent's Health:",windowWidth-350, 70);
+    stroke(255,0,0);
+    strokeWeight(1.5);
+    textFont(font1);
+    textSize(50);
+    
+    textAlign(TOP,LEFT);
+    text("Opponent's Health:",windowWidth-350, 60);
 
 
 
